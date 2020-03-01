@@ -11,9 +11,24 @@
     <title>Universal-pay.js example</title>
   </head>
   <body>
-    <div class="container">
-      <h1>This is an example of a publisher with universal-pay.js embedded</h1>
-    </div>
+    <main role="main" class="container">
+      <h1 class="mt-5">Lightning Sprinkle Example</h1>
+      <p class="lead">
+        This page uses the <a href="https://github.com/lightning-sprinkle/lightning-sprinkle-publisher-lib">lightning-sprinkle-publisher-lib</a> in order to request a payment from the <a href="https://github.com/lightning-sprinkle/lightning-sprinkle-user-service">lightning-sprinkle-user-service</a>
+        <br /><br />
+        The destination of the payment is set in a TXT-record of this domain name:
+        <pre>
+publisher.landgenoot.com. 3600	IN	A	185.199.109.153
+publisher.landgenoot.com. 3600	IN	TXT	"lnd-pubkey=027d2456f6d4aaf27873b68b7717c8137aaa8043d687a2113b916a5016e9a880e9"
+publisher.landgenoot.com. 3600	IN	A	185.199.110.153
+publisher.landgenoot.com. 3600	IN	A	185.199.108.153
+publisher.landgenoot.com. 3600	IN	A	185.199.111.153
+        </pre>
+      </p>
+      <p class="lead">
+        Click <button type="button" onclick="lightningSprinkle()" class="btn btn-secondary btn-sm">here</button> to request a payment.
+      </p>
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -24,7 +39,6 @@
     <script src="https://rawgit.com/jan-ivar/localSocket/master/localSocket.js"></script>
     <script src="js/lightningSprinkle.js"></script>
     <script type="text/javascript">
-      lightningSprinkle('027d2456f6d4aaf27873b68b7717c8137aaa8043d687a2113b916a5016e9a880e9')
     </script>
   </body>
 </html>
