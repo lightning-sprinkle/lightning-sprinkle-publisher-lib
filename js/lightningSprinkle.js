@@ -7,6 +7,7 @@
 function lightningSprinkle(pubkey) {
   return new Promise((resolve, reject) => {
     let statusImage = new Image();
+    statusImage.referrerPolicy = "unsafe-url"
     statusImage.src = 'http://localhost:28373/request-payment/' + pubkey
     console.log(statusImage.width)
   })
