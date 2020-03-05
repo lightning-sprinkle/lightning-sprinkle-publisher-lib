@@ -9,6 +9,6 @@ function lightningSprinkle() {
     let statusImage = new Image();
     statusImage.referrerPolicy = "unsafe-url"
     statusImage.src = 'http://localhost:28373/request-payment/'
-    console.log(statusImage.width)
+    console.log(statusImage)
   })
 }
