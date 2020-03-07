@@ -12,3 +12,15 @@ function lightningSprinkle() {
     console.log(statusImage)
   })
 }
+
+/**
+ * Show an iframe where we can whitelist this domain.
+ */
+function requestPermission() {
+  return new Promise((resolve, reject) => {
+    let iframe = document.createElement('iframe')
+    iframe.src = 'http://localhost:28373/request-permission'
+    iframe.style = 'position:absolute;top:0;right:0;border:none'
+    document.body.appendChild(iframe);
+  })
+}
