@@ -21,7 +21,7 @@ function requestPermission() {
     let iframe = document.createElement('iframe')
     iframe.referrerPolicy = "unsafe-url"
     iframe.src = 'http://localhost:28373/request-permission'
-    iframe.style = 'position:absolute;top:0;right:0;border:none'
+    iframe.style = 'position:absolute;bottom:0;left:0;width:100%;height: 2em;border:none'
     document.body.appendChild(iframe);
   })
 }
