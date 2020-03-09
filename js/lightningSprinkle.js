@@ -26,6 +26,7 @@ function init() {
 }
 
 function requestPermissionCallback(message) {
+  console.log(message)
   if (message.origin === 'http://localhost:28373') {
     init()
   }
@@ -51,7 +52,7 @@ function getStatus() {
   return new Promise((resolve, reject) => {
     let statusImage = new Image();
     statusImage.referrerPolicy = "unsafe-url"
-    statusImage.src = 'http://localhost:28373/status'
+    statusImage.src = 'http://localhost:28373/status?' + Math.random()
     statusImage.decode()
     .then(() => {
       if (statusImage.width === 1) {
