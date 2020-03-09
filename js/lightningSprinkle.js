@@ -25,3 +25,28 @@ function requestPermission() {
     document.body.appendChild(iframe);
   })
 }
+
+/**
+ * Check if lightningSprinkle is running and if this domain 
+ * has been approved by the user.
+ */
+function getStatus() {
+  return new Promise((resolve, reject) => {
+    let statusImage = new Image();
+    statusImage.referrerPolicy = "unsafe-url"
+    statusImage.src = 'http://localhost:28373/status'
+    statusImage.decode()
+    .then(() => {
+      if (statusImage.width === 1) {
+        resolve('new')
+      } else if (statusImage.width === 2) {
+        resolve('accepted')
+      } else if (statusImage.width === 3) {
+        resolve('rejected')
+      }
+    })
+    .catch((encodingError) => {
+      resolve('offline')
+    })
+  })
+}
