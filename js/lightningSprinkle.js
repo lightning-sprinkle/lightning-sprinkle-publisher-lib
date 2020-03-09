@@ -67,5 +67,3 @@ function getStatus() {
     })
   })
 }
-
-lightningSprinkle()
