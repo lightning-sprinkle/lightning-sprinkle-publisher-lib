@@ -20,6 +20,7 @@ function init() {
       showSupportMessage()
     } else if (status === 'accepted') {
       $('.adsbygoogle').remove()
+      $('.support-message').remove()
     }
   })
 }
@@ -37,7 +38,7 @@ function requestPermissionCallback(message) {
  */
 function showSupportMessage() {
   $('body').append(`
-    <div style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #350743;color: white;text-align: left;padding: 0.5em">
+    <div class="support-message" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #350743;color: white;text-align: left;padding: 0.5em">
       <div style="float:left;">${window.location.hostname} supports Lightning Sprinkle</div>
       <div style="float:right;">
         <button style="border:none; color: black; background-color: white; padding: 0.3em;" onclick="requestPermission()">set preferences</button>
